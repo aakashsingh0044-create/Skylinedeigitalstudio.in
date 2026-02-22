@@ -245,32 +245,40 @@ setInterval(() => {
 updateLeadership(0);
 
 
-const form = document.getElementById("contact-form");
-const message = document.getElementById("form-message");
 
-form.addEventListener("submit", async function(e) {
-  e.preventDefault();
 
-  const formData = new FormData(form);
+document.addEventListener("DOMContentLoaded", function () {
 
-  try {
-    const response = await fetch(form.action, {
-      method: "POST",
-      body: formData
-    });
+  const form = document.getElementById("contact-form");
+  if (!form) return; // prevents errors on other pages
 
-    if (response.ok) {
-      message.style.color = "#28a745";
-      message.innerText = "✅ Message sent successfully! We’ll get back to you soon.";
-      form.reset();
-    } else {
-      message.style.color = "red";
-      message.innerText = "❌ Something went wrong. Please try again.";
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: formData
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        alert("Message sent successfully!");
+        form.reset();
+      } else {
+        alert("Something went wrong. Please try again.");
+        console.log(result);
+      }
+
+    } catch (error) {
+      alert("Network error. Please try again.");
+      console.error(error);
     }
-  } catch (error) {
-    message.style.color = "red";
-    message.innerText = "❌ Network error. Please try again.";
-  }
+  });
+
 });
 
 
