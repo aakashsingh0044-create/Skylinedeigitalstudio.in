@@ -245,3 +245,33 @@ setInterval(() => {
 updateLeadership(0);
 
 
+const form = document.getElementById("contact-form");
+const message = document.getElementById("form-message");
+
+form.addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const formData = new FormData(form);
+
+  try {
+    const response = await fetch(form.action, {
+      method: "POST",
+      body: formData
+    });
+
+    if (response.ok) {
+      message.style.color = "#28a745";
+      message.innerText = "✅ Message sent successfully! We’ll get back to you soon.";
+      form.reset();
+    } else {
+      message.style.color = "red";
+      message.innerText = "❌ Something went wrong. Please try again.";
+    }
+  } catch (error) {
+    message.style.color = "red";
+    message.innerText = "❌ Network error. Please try again.";
+  }
+});
+
+
+
