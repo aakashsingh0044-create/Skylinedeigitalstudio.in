@@ -639,19 +639,24 @@ We don’t rely on history — we build results.
       <div class="contact-form-card">
         <h3>Let’s Start a Conversation</h3>
 
-        <form>
-          <div class="form-row">
-            <input type="text" placeholder="Your Name">
-            <input type="email" placeholder="Email Address">
-          </div>
+       <form action="https://api.web3forms.com/submit" method="POST">
 
-          <input type="text" placeholder="What’s this about?">
-          <textarea placeholder="Tell us more about your project..."></textarea>
+  <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
 
-          <button type="submit" class="btn-primary full-btn">
-            Send Message
-          </button>
-        </form>
+  <div class="form-row">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Email Address" required>
+  </div>
+
+  <input type="text" name="subject" placeholder="What’s this about?" required>
+
+  <textarea name="message" placeholder="Tell us more about your project..." required></textarea>
+
+  <button type="submit" class="btn-primary full-btn">
+    Send Message
+  </button>
+
+</form>
       </div>
 
       <!-- RIGHT INFO -->
@@ -784,3 +789,4 @@ We don’t rely on history — we build results.
 
 </body>
 </html>
+
