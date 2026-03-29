@@ -740,6 +740,10 @@ body {
     color: white;
 }
 
+.portfolio-section a{
+    color: white;
+}
+
 .portfolio-header {
     text-align: center;
     margin-bottom: 40px;
