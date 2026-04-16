@@ -734,8 +734,15 @@ body {
 
 /* ================= PORTFOLIO ================= */
 
+
+.portfolio-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
 .portfolio-section {
-    padding: 100px 8%;
+    padding: 100px 20px;
     background: #050816;
     color: white;
 }
@@ -785,6 +792,7 @@ body {
 /* GRID */
 
 .portfolio-grid {
+    width:100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
