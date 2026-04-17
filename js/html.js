@@ -254,5 +254,30 @@ updateLeadership(0);
 
 
 
+(function () {
+
+  const fwButtons = document.querySelectorAll(".fw-btn");
+  const fwCards = document.querySelectorAll(".fw-card");
+
+  fwButtons.forEach(fwBtn => {
+    fwBtn.addEventListener("click", () => {
+
+      fwButtons.forEach(b => b.classList.remove("active"));
+      fwBtn.classList.add("active");
+
+      const fwFilter = fwBtn.getAttribute("data-filter");
+
+      fwCards.forEach(fwCard => {
+        if (fwFilter === "all" || fwCard.dataset.category === fwFilter) {
+          fwCard.style.display = "block";
+        } else {
+          fwCard.style.display = "none";
+        }
+      });
+
+    });
+  });
+
+})();
 
 
