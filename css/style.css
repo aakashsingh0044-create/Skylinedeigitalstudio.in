@@ -26,7 +26,15 @@ body {
 h3{
   color:white;  
 }
+h2{
+color:white;
+    
+}
 
+h4{
+
+ color:white;   
+}
 
 /* NAVIGATION CONTAINER(overlapping hero) */
 .main-header {
