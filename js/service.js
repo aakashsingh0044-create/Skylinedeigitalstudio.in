@@ -1,23 +1,3 @@
-const hamburger = document.getElementById("hamburger");
-const navLinks = document.querySelector(".nav-links");
-
-if (hamburger && navLinks) {
-  hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("active");
-    navLinks.classList.toggle("active");
-    document.body.classList.toggle("menu-open");
-  });
-
-  const menuLinks = document.querySelectorAll(".nav-links a");
-  menuLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-      hamburger.classList.remove("active");
-      navLinks.classList.remove("active");
-      document.body.classList.remove("menu-open");
-    });
-  });
-}
-
 const tabButtons = document.querySelectorAll(".tab-btn");
 const tabContents = document.querySelectorAll(".tab-content");
 const roadmapFill = document.querySelector(".roadmap-line-fill");
