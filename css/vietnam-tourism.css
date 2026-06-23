@@ -32,7 +32,7 @@ body{
         rgba(2,8,23,.72) 30%,
         rgba(2,8,23,.25) 60%
     ),
-    url("../css/land.jpg");
+    url("land.jpg");
 
     background-size:cover;
     background-position:center;
